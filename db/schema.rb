@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170912034509) do
     t.string "address_line2"
     t.string "city"
     t.string "state"
-    t.integer "postal_code"
+    t.string "postal_code"
     t.string "country"
     t.bigint "contact_id"
     t.datetime "created_at", null: false
@@ -27,14 +27,16 @@ ActiveRecord::Schema.define(version: 20170912034509) do
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "first_name"
+    t.string "middle_name"
     t.string "last_name"
+    t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "phone_numbers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "home_phone_num"
-    t.integer "work_phone_num"
+    t.string "home_phone_num"
+    t.string "work_phone_num"
     t.string "mobile_phone_num"
     t.bigint "contact_id"
     t.datetime "created_at", null: false

@@ -5,11 +5,14 @@ class CreateAddresses < ActiveRecord::Migration[5.1]
       t.string :address_line2
       t.string :city
       t.string :state
-      t.integer :postal_code
+      t.string :postal_code
       t.string :country
       t.references :contact, foreign_key: true
-
       t.timestamps
     end
+  end
+  
+  def self.down  
+      drop_table :addresses  
   end
 end
