@@ -1,0 +1,55 @@
+<div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
+    <h1>New Contact</h1>
+  </div>
+</div>
+
+
+<div class="create">
+  <div class="container">
+   	<%= simple_form_for @contact do |f|%>
+		 <div class="form-group">
+                 <label  class="control-label ">First Name<sup><span class="glyphicon glyphicon-asterisk red-star" aria-hidden="true"></span></sup>:</label>
+                 <%= f.input :first_name , label: false, input_html: { class: 'form-control' }  %>
+				<label  class="control-label ">Middle Name<sup><span class="glyphicon glyphicon-asterisk red-star" aria-hidden="true"></span></sup>:</label>
+                 <%= f.input :middle_name , label: false, input_html: { class: 'form-control' }  %>
+
+				<label  class="control-label ">Last Name<sup><span class="glyphicon glyphicon-asterisk red-star" aria-hidden="true"></span></sup>:</label>
+                 <%= f.input :last_name , label: false, input_html: { class: 'form-control' }  %>
+
+				<label class="control-label ">Gender<sup><span class="glyphicon glyphicon-asterisk red-star" aria-hidden="true"></span></sup>:</label>
+                 <%= f.input :gender , label: false, input_html: { class: 'form-control' }  %>
+
+           </div>           
+	   
+
+	<div>
+          <div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+              <%= f.simple_fields_for :addresses do |address| %>
+                <%= render 'address_fields', :f => address %>
+              <% end %>
+              <div class="links">
+                <%= link_to_add_association 'add address detail', f, :addresses %>
+              </div>
+          </div>
+    </div>
+    
+	<div >
+          <div class="col-md-5 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+              <%= f.simple_fields_for :phone_numbers do |phone| %>
+                <%= render 'phone_number_fields', :f => phone %>
+              <% end %>
+              <div class="links">
+                <%= link_to_add_association 'add phone numbers detail', f, :phone_numbers %>
+              </div>
+          </div>
+    </div>
+
+    <div class ="actions">
+      <%= f.submit "Create" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+

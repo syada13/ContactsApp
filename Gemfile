@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.3'
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
+gem 'simple_form'
+gem 'cocoon'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

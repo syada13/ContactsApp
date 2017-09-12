@@ -1,1 +1,38 @@
-<p1> Hello Suresh!!</p1>
+<div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
+    <h1>Contacts</h1>
+  </div>
+</div>
+
+<div class="contacts">
+  <div class="container">
+  	     <% @contacts.each do |c| %> 
+			<div class="contact"> 
+  			<p class="content"><%= c.first_name %></p> 
+  			<p class="content"><%= c.middle_name %></p> 
+            <p class="content"><%= c.last_name %></p> 
+            <p class="content"><%= c.gender %></p> 
+  
+   
+         <% @addresses.each do |a| %> 
+  			<p class="content"><%= a.address_line1 %></p>
+            <p class="content"><%= a.address_line2 %></p>
+			<p class="content"><%= a.city %></p>
+            <p class="content"><%= a.state %></p>
+			<p class="content"><%= a.postal_code %></p>
+            <p class="content"><%= a.country %></p>
+
+           <% @phoneNumbers.each do |ph| %> 
+			  			<p class="content"><%= ph.home_phone_num %></p>
+			            <p class="content"><%= ph.work_phone_num %></p>
+						<p class="content"><%= ph.mobile_phone_num %></p>			            					
+ 
+		<% end %>
+    <% end %>
+<% end %>
+		<%= link_to 'New Contact', new_contact_path %>
+  </div>
+</div>
+
+
