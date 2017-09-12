@@ -10,8 +10,12 @@ end
 gem 'rails', '~> 5.1.3'
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
+gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'cocoon'
+gem 'slim'
+gem 'jquery-rails'
+gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -21,7 +25,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'rspec-rails', '3.5.0'
-gem 'pry-rails'
+#gem 'pry-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

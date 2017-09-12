@@ -7,32 +7,34 @@
 
 <div class="contacts">
   <div class="container">
-  	     <% @contacts.each do |c| %> 
-			<div class="contact"> 
-  			<p class="content"><%= c.first_name %></p> 
-  			<p class="content"><%= c.middle_name %></p> 
-            <p class="content"><%= c.last_name %></p> 
-            <p class="content"><%= c.gender %></p> 
-  
-   
-         <% @addresses.each do |a| %> 
-  			<p class="content"><%= a.address_line1 %></p>
-            <p class="content"><%= a.address_line2 %></p>
-			<p class="content"><%= a.city %></p>
-            <p class="content"><%= a.state %></p>
-			<p class="content"><%= a.postal_code %></p>
-            <p class="content"><%= a.country %></p>
+     	<h3 class="text-center">Contacts List</h3><hr>
+		  <table>
+		  <tr>
+		      <th class="text-center">First Name</th>
+		      <th class="text-center">Middle Name</th>
+		       <th class="text-center">Last Name</th>
+		      <th class="text-center">Gender</th>
+		      <th class="text-center">Actions</th>
+		  </tr>
 
-           <% @phoneNumbers.each do |ph| %> 
-			  			<p class="content"><%= ph.home_phone_num %></p>
-			            <p class="content"><%= ph.work_phone_num %></p>
-						<p class="content"><%= ph.mobile_phone_num %></p>			            					
- 
-		<% end %>
-    <% end %>
-<% end %>
+
+		  <% @contacts.each do |c| %>
+		      <tr class="text-center">
+		           <td><%= c.first_name %></td>
+		           <td><%= c.middle_name %></td>
+		           <td><%= c.last_name %></td>
+		           <td><%= c.gender %></td>
+		          <td class="text-center"><%=link_to "Edit", edit_contact_path(c.id) %><%=link_to "View", contact_path(c.id) %><%= link_to "Delete", contact_path(c.id),
+		                  data: {:confirm => 'Are you sure?'}, :method => :delete%>
+
+		          </td>
+		    </tr>
+		  <% end %>
+		</table>
 		<%= link_to 'New Contact', new_contact_path %>
   </div>
 </div>
+
+
 
 

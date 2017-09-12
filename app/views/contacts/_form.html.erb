@@ -1,0 +1,22 @@
+
+   	<%= simple_form_for @contact do |f|%>
+		              
+                 <%= f.input :first_name %>
+                 <%= f.input :middle_name  %>
+                 <%= f.input :last_name   %>
+                 <%= f.input :gender %>
+	   
+
+              <%= f.simple_fields_for :addresses do |address| %>
+                <%= render 'address_fields', f: address %>
+                <%= link_to_add_association 'add address detail', f, :addresses %>
+  
+              <%= f.simple_fields_for :phone_numbers do |phone| %>
+                <%= render 'phone_number_fields', f: phone %>
+                <%= link_to_add_association 'add phone numbers detail', f, :phone_numbers %>
+              
+      <%= f.submit "Create" %>
+    <% end %>
+  <% end %>
+  <% end %>
+  

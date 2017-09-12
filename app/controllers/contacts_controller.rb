@@ -12,7 +12,9 @@ class ContactsController < ApplicationController
     @contact.phone_numbers.build
   end 
   
-  
+  def edit
+     @contact = Contact.find(params[:id])
+  end 
  
   def create
       @contact = Contact.new(contact_params)
@@ -25,6 +27,16 @@ class ContactsController < ApplicationController
       end 
     end 
 
+    def update
+          @contact = Contact.find(params[:id])
+          if @tour.update(contact_params)
+                flash[:success] = "Contact updated!"
+                redirect_to contacts_path
+          else
+                flash[:error]  = "There was problem updating contact. Please try later."
+          end
+    end
+    
   	private
     
     def contact_params
