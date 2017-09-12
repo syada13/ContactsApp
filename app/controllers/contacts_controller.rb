@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
 
     def update
           @contact = Contact.find(params[:id])
-          if @tour.update(contact_params)
+          if @contact.update(contact_params)
                 flash[:success] = "Contact updated!"
                 redirect_to contacts_path
           else
