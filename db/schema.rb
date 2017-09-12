@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 20170912034509) do
     t.index ["contact_id"], name: "index_phone_numbers_on_contact_id"
   end
 
-  add_foreign_key "addresses", "contacts"
-  add_foreign_key "phone_numbers", "contacts"
+  add_foreign_key "addresses", "contacts", on_delete: :cascade
+  add_foreign_key "phone_numbers", "contacts", on_delete: :cascade
 end

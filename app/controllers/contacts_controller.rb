@@ -2,8 +2,10 @@ class ContactsController < ApplicationController
   
   def index
     @contacts = Contact.all
-    @addresses = Address.all
-    @phoneNumbers = PhoneNumber.all
+  end
+  
+  def show
+    @contact = Contact.find(params[:id])
   end
   
   def new
@@ -36,6 +38,18 @@ class ContactsController < ApplicationController
                 flash[:error]  = "There was problem updating contact. Please try later."
           end
     end
+    
+     def destroy
+            @contact = Contact.find(params[:id])
+            if @contact.delete
+                  flash[:success]  = "Contact successfully deleted"
+                  redirect_to contacts_path
+            else
+                  flash[:error] = "There was problem while deleting contact!"
+                  redirect_to contacts_path
+            end
+      end
+    
     
   	private
     

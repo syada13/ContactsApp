@@ -9,12 +9,11 @@
 
               <%= f.simple_fields_for :addresses do |address| %>
                 <%= render 'address_fields', f: address %>
-                <%= link_to_add_association 'add address detail', f, :addresses %>
+                <%= link_to_add_association 'add address details', f, :addresses %>
   
               <%= f.simple_fields_for :phone_numbers do |phone| %>
                 <%= render 'phone_number_fields', f: phone %>
-                <%= link_to_add_association 'add phone numbers detail', f, :phone_numbers %>
-              
+                <%= link_to_add_association 'add phone numbers', f, :phone_numbers %>            
       <%= f.submit "Save Contacts" %>
     <% end %>
   <% end %>
