@@ -15,6 +15,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap
 //= require cocoon
+//= require bootstrap-sprockets
+//= require_tree .
+
+
+$(document).ready(function() {
+    $("a.add_fields").
+      data("association-insertion-position", 'before').
+      data("association-insertion-node", 'this');
+});

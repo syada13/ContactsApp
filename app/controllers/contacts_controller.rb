@@ -36,6 +36,7 @@ class ContactsController < ApplicationController
                 redirect_to contacts_path
           else
                 flash[:error]  = "There was problem updating contact. Please try later."
+                render 'edit'
           end
     end
     

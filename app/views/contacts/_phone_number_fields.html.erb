@@ -1,6 +1,8 @@
-<div class="nested-fields">		
-    <%= f.input :home_phone_num %></br>
-    <%= f.input :work_phone_num %></br>
-    <%= f.input :mobile_phone_num %></br>
+<div class="nested-fields">
+	<div class="form-group">	
+    <%= f.input :home_phone_num, :label => false, :placeholder => 'add a home_phone_num',  input_html: { class: 'form-control' } %></br>
+    <%= f.input :work_phone_num , :label => false, :placeholder => 'add a work_phone_num',  input_html: { class: 'form-control' }%></br>
+    <%= f.input :mobile_phone_num , :label => false, :placeholder => 'add a mobile_phone_num',  input_html: { class: 'form-control' }%></br>
     <%= link_to_remove_association "remove phone detail", f %>
- <div>
+ </div>
+</div>

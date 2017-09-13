@@ -1,19 +1,51 @@
-<%= simple_form_for @contact do |f|%>
-	              
-             <%= f.input :first_name %>
-             <%= f.input :middle_name  %>
-             <%= f.input :last_name   %>
-             <%= f.input :gender %>
-   
+<div class="header">		
+	<h3 class="white">View a contact</h3>   
+</div>
 
-          <%= f.simple_fields_for :addresses do |address| %>
-            <%= render 'show_address_fields', f: address %>
 
-          <%= f.simple_fields_for :phone_numbers do |phone| %>
-            <%= render 'show_phone_number_fields', f: phone %>
-            
-          
-  <%= link_to 'Cancel', contacts_path %>
-<% end %>
-<% end %>
-<% end %>
+<div class ="row">
+ <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 set-priority-edit">
+   	<%= simple_form_for @contact do |f|%>	
+				<div class="form-group">
+					<div class="text-center header-style"> Contact Details</div>
+				  	  <label>First Name</label>
+                      <%= f.input :first_name , :label => false,  input_html: { class: 'form-control' }  %>
+                </div>
+  
+                <div class="form-group">
+	                 <label>Middle Name</label>
+                      <%= f.input :middle_name , :label => false, input_html: { class: 'form-control' }  %>
+                </div>
+
+				<div class="form-group">
+					<label>Last Name</label>
+                      <%= f.input :last_name , :label => false,  input_html: { class: 'form-control' }  %>
+                </div>
+
+				<div class="form-group">
+					<label>Gender</label>
+                      <%= f.input :gender , :label => false,  input_html: { class: 'form-control' }  %>
+                </div>
+                <hr>
+
+	            <div class="text-center header-style"> Address Details</div>
+                  <div>
+                    <%= f.simple_fields_for :addresses do |address| %>
+                    <%= render 'show_address_fields', :f => address %>
+                    <% end %>               
+                 </div>
+                  <hr>
+                 <div class="text-center header-style"> Phone Details</div>
+                 <div>
+                  <%= f.simple_fields_for :phone_numbers do |phone| %>
+                  <%= render 'show_phone_number_fields', :f => phone %>
+                 <% end %>
+         </div></br>
+             
+ <%= link_to 'Cancel', contacts_path, :class =>"btn btn-primary" %>
+  <% end %>
+</div>
+</div>
+
+
+  

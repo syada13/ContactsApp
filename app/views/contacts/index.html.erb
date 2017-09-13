@@ -1,16 +1,15 @@
 <div class="header">		
-	<h3 class="container">Contact List</h3>   
+	<h3  class="white">Contact List</h3>   
 </div>
 
-<div>
   <div class="container">
-		  <table>
+		  <table class="container" >
 		  <tr>
-		      <th>First Name</th>
-		      <th >Middle Name</th>
-		       <th>Last Name</th>
-		      <th>Gender</th>
-		      <th>Actions</th>
+		      <th class="text-left"> First Name</th>
+		      <th class="text-left">Middle Name</th>
+		      <th class="text-left">Last Name</th>
+		      <th class="text-left">Gender</th>
+		      <th class="text-center">Actions</th>
 		  </tr>
 		
 
@@ -20,15 +19,19 @@
 		           <td><%= c.middle_name %></td>
 		           <td><%= c.last_name %></td>
 		           <td><%= c.gender %></td>
-		          <td class ="text-center"> <%= link_to "Edit", edit_contact_path(c.id) %>     <%=link_to "View", contact_path(c.id) %>   <%= link_to "Delete", contact_path(c.id),data: {:confirm => 'Are you sure?'}, :method => :delete%>
+		          <td> <%= link_to "Edit", edit_contact_path(c.id),:class =>"btn btn-primary" %>     <%=link_to "View", contact_path(c.id),:class =>"btn btn-primary" %>   <%= link_to "Delete", contact_path(c.id),:class =>"btn btn-primary", data: {:confirm => 'Are you sure?'}, :method => :delete%>
 
 		          </td>
 		    </tr>
 		  <% end %>
 		</table>
-		<%= link_to 'New Contact', new_contact_path %>
+		<div>
+		<%= link_to 'New Contact', new_contact_path,:class =>"btn btn-primary" %>
   </div>
-</div>
+
+
+
+
 
 
 
