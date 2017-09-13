@@ -3,41 +3,41 @@ body{
 }
 
 .set-priority-edit {
-   padding: 20px;	
-  background: white;
-  margin-top:15px;
-  border: 1px solid #e5e5e5;
+	padding: 20px;	
+	background: white;
+	margin-top:15px;
+	border: 1px solid #e5e5e5;
 }
 .header-style{
 	font-size: 16px;
 }
 .red-star {
-    color: red;
-    content: "*";
-    position: absolute;
+	color: red;
+	content: "*";
+	position: absolute;
 }
 
 .red {
-    color: red;
-    position: top;
-    font-size: 16px;
-    font: sans-serif;
+	color: red;
+	position: top;
+	font-size: 16px;
+	font: sans-serif;
 }
 
 .white {
-    color: white;
-    position: top;
-    font: sans-serif;
-    font-size: 25px;
-    margin-top:15px;
-    width: 480px;
+	color: white;
+	position: top;
+	font: sans-serif;
+	font-size: 25px;
+	margin-top:15px;
+	width: 480px;
 	margin: 0 auto;
 }
 
 
 .field_with_errors {
-  padding: 1px;
-  background-color: red;
-  display: table;
-  font: sans-serif;
+	padding: 1px;
+	background-color: red;
+	display: table;
+	font: sans-serif;
 }

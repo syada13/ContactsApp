@@ -8,7 +8,8 @@ class CreateContacts < ActiveRecord::Migration[5.1]
       t.timestamps
     end
   end
+
   def self.down  
-      drop_table :contacts  
-    end
+    drop_table :contacts  
+  end
 end

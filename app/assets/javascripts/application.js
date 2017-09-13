@@ -22,7 +22,7 @@
 
 
 $(document).ready(function() {
-    $("a.add_fields").
-      data("association-insertion-position", 'before').
-      data("association-insertion-node", 'this');
+	$("a.add_fields").
+	data("association-insertion-position", 'before').
+	data("association-insertion-node", 'this');
 });

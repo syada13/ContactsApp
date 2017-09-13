@@ -2,32 +2,32 @@
 	<h3  class="white">Contact List</h3>   
 </div>
 
-  <div class="container">
-		  <table class="container" >
-		  <tr>
-		      <th class="text-left"> First Name</th>
-		      <th class="text-left">Middle Name</th>
-		      <th class="text-left">Last Name</th>
-		      <th class="text-left">Gender</th>
-		      <th class="text-center">Actions</th>
-		  </tr>
-		
+<div class="container">
+	<table class="container" >
+		<tr>
+			<th class="text-left"> First Name</th>
+			<th class="text-left">Middle Name</th>
+			<th class="text-left">Last Name</th>
+			<th class="text-left">Gender</th>
+			<th class="text-center">Actions</th>
+		</tr>
 
-		  <% @contacts.each do |c| %>
-		      <tr>
-		           <td><%= c.first_name %></td>
-		           <td><%= c.middle_name %></td>
-		           <td><%= c.last_name %></td>
-		           <td><%= c.gender %></td>
-		          <td> <%= link_to "Edit", edit_contact_path(c.id),:class =>"btn btn-primary" %>     <%=link_to "View", contact_path(c.id),:class =>"btn btn-primary" %>   <%= link_to "Delete", contact_path(c.id),:class =>"btn btn-primary", data: {:confirm => 'Are you sure?'}, :method => :delete%>
 
-		          </td>
-		    </tr>
-		  <% end %>
-		</table>
-		<div>
+		<% @contacts.each do |c| %>
+		<tr>
+			<td><%= c.first_name %></td>
+			<td><%= c.middle_name %></td>
+			<td><%= c.last_name %></td>
+			<td><%= c.gender %></td>
+			<td> <%= link_to "Edit", edit_contact_path(c.id),:class =>"btn btn-primary" %>     <%=link_to "View", contact_path(c.id),:class =>"btn btn-primary" %>   <%= link_to "Delete", contact_path(c.id),:class =>"btn btn-primary", data: {:confirm => 'Are you sure?'}, :method => :delete%>
+
+			</td>
+		</tr>
+		<% end %>
+	</table>
+	<div>
 		<%= link_to 'New Contact', new_contact_path,:class =>"btn btn-primary" %>
-  </div>
+	</div>
 
 
 
